@@ -21,6 +21,12 @@ export class MondayAgentToolkit extends McpServer {
     super({
       name: 'monday.com',
       version: '1.0.0',
+    },
+    {
+    capabilities: {
+      tools: {
+        listChanged: true, // Declare that we support list change notifications
+      },
     });
 
     this.mondayApiClient = this.createApiClient(config);
